@@ -2,7 +2,7 @@ import { BACKGROUND_IMAGE, publications, PUB_COLORS, SECTION_HEADING } from "./c
 
 export default function Publications() {
   return (
-    <section id="publications" className="py-28 relative overflow-hidden bg-[#fafafa]">
+    <section id="publications" className="py-28 relative overflow-hidden section-white">
       <div
         className="absolute inset-0"
         style={{

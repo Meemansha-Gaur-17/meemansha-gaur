@@ -24,6 +24,7 @@ export const speaking: SpeakingEntry[] = [
       "Delivered a talk on Doomscrolling to a live audience, addressing themes of psychology, emotional awareness, and real-world application for youth and professionals.",
     featured: true,
     videoHref: "https://www.youtube.com/watch?v=_z4h1nWKOlM",
+    videoId: "_z4h1nWKOlM",
   },
   {
     event: "Suicide Awareness Workshop",

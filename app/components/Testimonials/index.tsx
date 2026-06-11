@@ -31,7 +31,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-28 bg-[#fafafa] relative overflow-hidden"
+      className="py-28 section-white relative overflow-hidden"
     >
       <div className="absolute inset-0 dot-pattern opacity-60 pointer-events-none" />
 

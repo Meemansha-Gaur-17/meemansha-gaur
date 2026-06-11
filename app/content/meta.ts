@@ -4,8 +4,9 @@ export const meta: Meta = {
   name: "Meemansha Gaur",
   firstName: "Meemansha",
   lastName: "Gaur",
-  title: "Counseling Psychologist & PhD Scholar",
-  tagline: "Bridging science and compassion to support mental well-being.",
+  title: "Counseling Psychologist · PhD Researcher · TEDx Speaker",
+  tagline:
+    "I help people understand themselves — through therapy, research, and honest conversation.",
   email: "meemansha87@gmail.com",
   phone: "+91-8077574531",
   location: "Rishikesh, India",
@@ -14,13 +15,6 @@ export const meta: Meta = {
 };
 
 export const nav: NavLink[] = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  { label: "Research", href: "#publications" },
-  { label: "Speaking", href: "#speaking" },
-  { label: "Skills", href: "#skills" },
-  { label: "Offerings", href: "#offerings" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Work", href: "/work" },
 ];

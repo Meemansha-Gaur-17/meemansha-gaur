@@ -7,7 +7,7 @@ export const SCROLL_THRESHOLD = 40;
 
 export const BOOK_SESSION_CTA: NavbarCta = {
   label: "Book a Session",
-  href: "#contact",
+  href: "/book",
 };
 
 export { nav };

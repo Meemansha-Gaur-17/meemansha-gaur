@@ -151,7 +151,7 @@ function ProductCard({ offering }: { offering: Offering }) {
 
 export default function Offerings() {
   return (
-    <section id="offerings" className="py-28 bg-white">
+    <section id="offerings" className="py-28 section-alt">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <div>

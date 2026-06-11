@@ -41,10 +41,17 @@ export const about: AboutContent = {
     "My name means analysis of life. Everything I do is just that, in a different room.",
   bio: [
     "I chose psychology because I needed it first. That experience never left me — it shaped how I listen, how I research, and how I show up in a room with someone who's quietly looking for answers.",
-    "I'm a Counseling Psychologist and PhD researcher, with a foundation spanning clinical, developmental, and counseling psychology. I founded my own private practice, conduct peer-reviewed research, work with neurodivergent children, and have spoken at TEDx Gurugram — not because I'm chasing breadth, but because I believe mental health care should be accessible to everyone, in every form they need it.",
-    "I work like a mirror. Not to show you what's broken — but to help you see what's already there. Because you already have more answers than you think.",
+    "Outside the clinic, I'm a trained Kathak dancer with a six-year graduate diploma in North Indian classical dance, and a writer who led research and editing for my college magazine Kaizen.",
   ],
 };
+
+export const CREDENTIALS_STRIP = [
+  "Counseling Psychologist",
+  "PhD Researcher at Amity University",
+  "Founder, Psyber Hub",
+  "TEDx Speaker",
+  "Published Researcher",
+];
 
 export const services: Service[] = [
   {

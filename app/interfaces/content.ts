@@ -57,6 +57,7 @@ export interface Internship {
   role: string;
   organization: string;
   period: string;
+  descriptor: string;
   highlights: string[];
 }
 
@@ -86,6 +87,7 @@ export interface SpeakingEntry {
   summary: string;
   featured: boolean;
   videoHref?: string;
+  videoId?: string;
 }
 
 export interface SkillsContent {

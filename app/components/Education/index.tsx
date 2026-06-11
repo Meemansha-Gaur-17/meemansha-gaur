@@ -2,7 +2,7 @@ import { education, EDU_COLORS, SECTION_HEADING } from "./constants";
 
 export default function Education() {
   return (
-    <section id="education" className="py-28 bg-white">
+    <section id="education" className="py-28 section-alt">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">

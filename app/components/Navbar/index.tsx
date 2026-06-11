@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { BOOK_SESSION_CTA, LOGO, nav, SCROLL_THRESHOLD } from "./constants";
 
@@ -25,29 +26,29 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
-        <a
-          href="#"
+        <Link
+          href="/"
           className="font-display text-2xl font-medium text-[#0a7c6e] tracking-wide"
         >
           {LOGO}
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {nav.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="font-body text-sm text-gray-500 hover:text-[#0a7c6e] transition-colors duration-200"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href={BOOK_SESSION_CTA.href}
             className="font-body text-sm font-medium bg-[#0a7c6e] text-white px-5 py-2.5 rounded-full hover:bg-[#085f56] transition-all duration-200 hover:shadow-md"
           >
             {BOOK_SESSION_CTA.label}
-          </a>
+          </Link>
         </div>
 
         <button
@@ -75,22 +76,22 @@ export default function Navbar() {
         <div className="min-h-0">
           <div className="border-t border-gray-100 px-6 py-6 flex flex-col gap-5">
             {nav.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
                 className="font-body text-gray-700 hover:text-[#0a7c6e] transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
+            <Link
               href={BOOK_SESSION_CTA.href}
               onClick={() => setMenuOpen(false)}
               className="font-body text-sm font-medium bg-[#0a7c6e] text-white px-5 py-3 rounded-full text-center"
             >
               {BOOK_SESSION_CTA.label}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

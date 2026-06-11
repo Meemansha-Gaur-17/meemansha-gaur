@@ -2,12 +2,13 @@ import {
   CURRENT_THEMES,
   experience,
   internships,
-  INTERN_COLORS,
-  INTERN_GRADS,
   PAST_COLORS,
   SECTION_HEADING,
   TIMELINE_GRADIENT,
+  VOLUNTEER_COLORS,
+  volunteering,
 } from "./constants";
+import InternshipsAccordion from "./InternshipsAccordion";
 
 export default function Experience() {
   const current = experience.filter((e) => e.current);
@@ -15,7 +16,7 @@ export default function Experience() {
   const [big, ...smalls] = current;
 
   return (
-    <section id="experience" className="py-28 bg-[#fafafa]">
+    <section id="experience" className="py-28 section-white pt-32">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">
@@ -205,46 +206,30 @@ export default function Experience() {
 
         <div className="pt-12 border-t border-gray-200">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-gray-400 mb-8">
-            Clinical Internships
+            Volunteering
           </p>
-          <div className="flex flex-col gap-5">
-            {internships.map((intern, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {volunteering.map((v, i) => (
               <div
-                key={i}
-                className="rounded-2xl overflow-hidden flex flex-col md:flex-row hover:shadow-lg transition-shadow duration-300"
+                key={v.organization}
+                className="p-7 glass-card rounded-2xl border-l-4 hover:shadow-md transition-shadow duration-300"
+                style={{ borderLeftColor: VOLUNTEER_COLORS[i] }}
               >
-                <div
-                  className="md:w-52 shrink-0 p-7 flex flex-col justify-between"
-                  style={{ background: INTERN_GRADS[i % INTERN_GRADS.length] }}
+                <p className="font-body font-semibold text-gray-900">{v.role}</p>
+                <p
+                  className="font-body text-sm mt-0.5 mb-1 font-medium"
+                  style={{ color: VOLUNTEER_COLORS[i] }}
                 >
-                  <p className="font-body text-xs text-white/60 uppercase tracking-widest mb-3">
-                    {intern.period}
-                  </p>
-                  <p className="font-display text-2xl font-light text-white leading-snug">
-                    {intern.organization}
-                  </p>
-                </div>
-
-                <div className="flex-1 p-7 bg-white border-t md:border-t-0 md:border-l border-gray-100">
-                  <h4 className="font-body font-semibold text-gray-900 mb-4">{intern.role}</h4>
-                  <ul className="flex flex-col gap-2.5">
-                    {intern.highlights.map((h, j) => (
-                      <li key={j} className="font-body text-sm text-gray-500 flex gap-2.5">
-                        <span
-                          className="shrink-0 mt-1.5 text-[10px] font-bold"
-                          style={{ color: INTERN_COLORS[i % INTERN_COLORS.length] }}
-                        >
-                          ▪
-                        </span>
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  {v.organization}
+                </p>
+                <p className="font-body text-xs text-gray-400 mb-4">{v.period}</p>
+                <p className="font-body text-sm text-gray-500 leading-relaxed">{v.detail}</p>
               </div>
             ))}
           </div>
         </div>
+
+        <InternshipsAccordion internships={internships} />
       </div>
     </section>
   );

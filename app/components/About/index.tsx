@@ -1,12 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import { meta } from "@/app/content/meta";
-import { about, ABOUT_IMAGE, CARD_THEMES, services } from "./constants";
+import { about, ABOUT_IMAGE, CARD_THEMES, CREDENTIALS_STRIP, services } from "./constants";
 
 export default function About() {
   return (
-    <section id="about" className="py-28 bg-white">
+    <section id="about" className="py-28 section-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
           <div className="flex justify-center lg:justify-start">
             <div className="relative w-[340px] h-[400px] md:w-[380px] md:h-[440px]">
               <div
@@ -44,16 +45,37 @@ export default function About() {
               ))}
             </div>
             <div className="flex items-center gap-3 mt-2">
-              <a
-                href={`mailto:${meta.email}`}
-                className="font-body text-sm font-semibold text-[#0a7c6e] hover:underline"
+              <Link
+                href="/book"
+                className="font-body text-sm font-semibold text-[#0a7c6e] hover:underline inline-flex items-center gap-1"
               >
-                {meta.email}
-              </a>
+                Get in touch
+                <span aria-hidden>→</span>
+              </Link>
               <span className="w-1 h-1 rounded-full bg-gray-300" />
               <span className="font-body text-sm text-gray-400">{meta.location}</span>
             </div>
           </div>
+        </div>
+
+        <div className="flex flex-wrap gap-3 mb-16 py-6 px-6 rounded-2xl section-alt border border-gray-100">
+          {CREDENTIALS_STRIP.map((item) => (
+            <span
+              key={item}
+              className="font-body text-xs font-semibold uppercase tracking-wider text-gray-500 px-4 py-2 rounded-full bg-white border border-gray-100"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+
+        <div>
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">
+            Services
+          </p>
+          <h3 className="font-display text-[clamp(2rem,4vw,3rem)] font-light text-gray-900 mb-10">
+            How I Can Help
+          </h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

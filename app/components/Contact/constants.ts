@@ -2,9 +2,9 @@ import type { ContactCopy } from "./interfaces";
 
 export const CONTACT_COPY: ContactCopy = {
   eyebrow: "Contact",
-  heading: "Let's Connect",
+  heading: "Other Ways to Reach Me",
   description:
-    "Whether you're seeking therapy, a research collaboration, or a speaker for your event — I'd love to hear from you.",
+    "Prefer email or a quick call? Reach out directly — I'll get back to you within 1–2 business days.",
 };
 
 export const COPYRIGHT_YEAR = 2026;

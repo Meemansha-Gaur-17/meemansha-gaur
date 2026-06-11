@@ -1,4 +1,8 @@
-import type { ExperienceEntry, Internship } from "@/app/interfaces/content";
+import type {
+  ExperienceEntry,
+  Internship,
+  VolunteeringEntry,
+} from "@/app/interfaces/content";
 import type { CurrentTheme } from "./interfaces";
 
 export const SECTION_HEADING = "Professional Journey";
@@ -45,6 +49,25 @@ export const INTERN_COLORS = ["#f59e0b", "#ff6b35", "#0a7c6e"];
 
 export const TIMELINE_GRADIENT =
   "linear-gradient(to bottom, #0a7c6e, #f59e0b, #ff6b35, #0a7c6e)";
+
+export const VOLUNTEER_COLORS = ["#ff6b35", "#f59e0b"];
+
+export const volunteering: VolunteeringEntry[] = [
+  {
+    role: "Crisis Counselor",
+    organization: "Vandrevala Foundation",
+    period: "December 2024 – March 2025",
+    detail:
+      "Provided immediate emotional support to individuals experiencing mental health crises via phone and chat.",
+  },
+  {
+    role: "Well-being Volunteer",
+    organization: "NIMHANS",
+    period: "January 2023 – June 2023",
+    detail:
+      "Trained in identifying and supporting individuals at risk of suicide. Assisted in mental health awareness workshops.",
+  },
+];
 
 export const experience: ExperienceEntry[] = [
   {
@@ -136,6 +159,7 @@ export const internships: Internship[] = [
     role: "Intern in Mental Health",
     organization: "Institute of Psychological Sciences and Research",
     period: "July 2024 – August 2024",
+    descriptor: "Psychoeducational workshops and clinical supervision in mental health settings.",
     highlights: [
       "Developed psychoeducational materials and facilitated workshops on somatoform disorders, neurodevelopmental disorders, and family therapy.",
       "Participated in weekly supervision and training sessions to enhance clinical skills and receive feedback.",
@@ -145,6 +169,7 @@ export const internships: Internship[] = [
     role: "Clinical Psychology Intern",
     organization: "Sir Ganga Ram Hospital",
     period: "May 2024 – July 2024",
+    descriptor: "Hospital-based intake interviews, MSE, and interdisciplinary case discussions.",
     highlights: [
       "Conducted comprehensive intake interviews and Mental State Examinations (MSE) within a hospital clinical psychology setting.",
       "Collaborated with healthcare teams for integrated patient care and contributed to interdisciplinary case discussions.",
@@ -154,6 +179,7 @@ export const internships: Internship[] = [
     role: "Clinical Psychology Intern",
     organization: "Synapses Neuropsychiatry Clinic",
     period: "January 2024 – March 2024",
+    descriptor: "Intake assessments and supervised therapeutic interventions in outpatient psychiatry.",
     highlights: [
       "Conducted intake interviews and Mental State Examinations (MSE) to assess cognitive and emotional functioning.",
       "Assisted in developing treatment plans and providing therapeutic interventions under supervision.",
@@ -163,6 +189,7 @@ export const internships: Internship[] = [
     role: "Clinical Psychology Intern",
     organization: "We Avec U Mental Health Organization",
     period: "September 2023 – November 2023",
+    descriptor: "Case history, MSE, and assessments across clinical and rehabilitation settings.",
     highlights: [
       "Acquired practical skills in Mental Status Examinations and comprehensive case history taking.",
       "Observed clients across a spectrum of disorders and conducted assessments in juvenile justice and rehabilitation settings.",
@@ -172,6 +199,7 @@ export const internships: Internship[] = [
     role: "Clinical Psychology Intern",
     organization: "Fortis Healthcare",
     period: "July 2023",
+    descriptor: "Psychological assessments, DSM-5 diagnostics, and crisis intervention training.",
     highlights: [
       "Trained in administering, scoring, and interpreting psychological assessments per DSM-5 diagnostic criteria.",
       "Learned crisis intervention, risk assessment, and immediate response strategies for suicidal individuals.",
@@ -181,6 +209,7 @@ export const internships: Internship[] = [
     role: "Clinical Psychology Intern",
     organization: "Cognizavest",
     period: "June 2023 – July 2023",
+    descriptor: "ICD and DSM-based case studies across the full patient management process.",
     highlights: [
       "Applied ICD and DSM criteria to clinical case studies across the full patient management process.",
       "Strengthened case history taking and theoretical-to-practical knowledge in clinical settings.",
@@ -190,6 +219,7 @@ export const internships: Internship[] = [
     role: "Psychology Intern",
     organization: "Cherith Brook Counselling Center",
     period: "April 2022 – January 2023",
+    descriptor: "Hands-on CBT experience under licensed therapist supervision.",
     highlights: [
       "Gained hands-on CBT experience under licensed therapists' supervision and contributed to case studies and reports.",
       "Conducted research on CBT efficacy and participated in regular training sessions.",
@@ -199,6 +229,7 @@ export const internships: Internship[] = [
     role: "Psychology Intern",
     organization: "Psychopedia",
     period: "June 2022 – July 2022",
+    descriptor: "Foundational counseling psychology training and ethical practice workshops.",
     highlights: [
       "Acquired foundational counseling psychology knowledge through mentorship and hands-on experience.",
       "Participated in training sessions on ethical practices and counseling strategies.",
@@ -208,6 +239,7 @@ export const internships: Internship[] = [
     role: "Psychology Intern",
     organization: "UrHealthyMind",
     period: "January 2021 – April 2022",
+    descriptor: "Mental health content creation and community engagement for awareness campaigns.",
     highlights: [
       "Developed engaging psychological content for blogs, social media, and newsletters with licensed psychologists.",
       "Conducted research on mental health trends and engaged with the online community to promote awareness.",
@@ -217,6 +249,7 @@ export const internships: Internship[] = [
     role: "Psychology Intern",
     organization: "Budding Psychologists",
     period: "November 2020 – January 2021",
+    descriptor: "Research-based psychological content for blogs and social media platforms.",
     highlights: [
       "Developed research-based psychological content for the organization's blog and social media platforms.",
       "Collaborated with licensed psychologists to ensure accuracy and alignment with evidence-based practices.",

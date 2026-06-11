@@ -16,6 +16,15 @@
   --brand-teal: #0a7c6e;
   --brand-amber: #f59e0b;
   --brand-orange: #ff6b35;
+  --section-alt: #f8f7f4;
+}
+
+.section-white {
+  background-color: #ffffff;
+}
+
+.section-alt {
+  background-color: var(--section-alt);
 }
 
 * {

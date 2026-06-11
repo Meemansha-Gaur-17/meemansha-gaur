@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { meta } from "@/app/content/meta";
-import { about, ABOUT_IMAGE, CARD_THEMES, CREDENTIALS_STRIP, services } from "./constants";
+import { about, ABOUT_IMAGE, CARD_THEMES, services } from "./constants";
+import CredentialsBento from "./CredentialsBento";
 
 export default function About() {
   return (
@@ -44,7 +45,8 @@ export default function About() {
                 </p>
               ))}
             </div>
-            <div className="flex items-center gap-3 mt-2">
+
+            <div className="flex items-center gap-3 mt-4">
               <Link
                 href="/book"
                 className="font-body text-sm font-semibold text-[#0a7c6e] hover:underline inline-flex items-center gap-1"
@@ -58,16 +60,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-3 mb-16 py-6 px-6 rounded-2xl section-alt border border-gray-100">
-          {CREDENTIALS_STRIP.map((item) => (
-            <span
-              key={item}
-              className="font-body text-xs font-semibold uppercase tracking-wider text-gray-500 px-4 py-2 rounded-full bg-white border border-gray-100"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
+        <CredentialsBento />
 
         <div>
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">

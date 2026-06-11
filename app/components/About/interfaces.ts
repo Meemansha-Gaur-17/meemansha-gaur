@@ -6,3 +6,8 @@ export interface CardTheme {
   num: string;
   rule: string;
 }
+
+export interface CredentialItem {
+  title: string;
+  subtitle?: string;
+}

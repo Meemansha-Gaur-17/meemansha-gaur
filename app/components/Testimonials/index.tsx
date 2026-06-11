@@ -5,6 +5,8 @@ import { SECTION_HEADING, testimonials } from "./constants";
 
 const AUTO_ADVANCE_MS = 5000;
 
+const PREVIEW_ACCENTS = ["#0a7c6e", "#f59e0b", "#ff6b35"];
+
 export default function Testimonials() {
   const [active, setActive] = useState(0);
   const count = testimonials.length;
@@ -136,21 +138,29 @@ export default function Testimonials() {
           <div className="hidden lg:grid grid-cols-3 gap-4 mt-6">
             {testimonials.slice(0, 3).map((item, i) => {
               const index = i;
+              const accent = PREVIEW_ACCENTS[i % PREVIEW_ACCENTS.length];
+              const isActive = active === index;
+
               return (
                 <button
                   key={item.name + item.date}
                   type="button"
                   onClick={() => goTo(index)}
-                  className={`text-left rounded-2xl glass-panel p-5 transition-all duration-300 ${
-                    active === index
-                      ? "border-[#0a7c6e]/30 shadow-md"
-                      : "hover:border-[#0a7c6e]/15"
+                  className={`text-left rounded-2xl bg-white p-6 transition-all duration-300 border border-gray-200 shadow-sm hover:shadow-md ${
+                    isActive ? "shadow-md ring-1 ring-gray-200" : "hover:border-gray-300"
                   }`}
+                  style={{
+                    borderLeftWidth: "3px",
+                    borderLeftColor: isActive ? accent : `${accent}99`,
+                  }}
                 >
                   <p className="font-body text-sm text-gray-600 leading-relaxed line-clamp-3">
                     {item.text}
                   </p>
-                  <p className="font-body text-xs font-semibold text-gray-900 mt-4">
+                  <p
+                    className="font-body text-xs font-semibold mt-4"
+                    style={{ color: isActive ? accent : "#111827" }}
+                  >
                     {item.name}
                   </p>
                 </button>

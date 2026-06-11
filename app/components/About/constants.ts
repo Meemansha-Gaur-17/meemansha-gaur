@@ -1,5 +1,5 @@
 import type { AboutContent, Service } from "@/app/interfaces/content";
-import type { CardTheme } from "./interfaces";
+import type { CardTheme, CredentialItem } from "./interfaces";
 
 export const ABOUT_IMAGE = {
   src: "/meemansha_image_2.jpg",
@@ -45,12 +45,12 @@ export const about: AboutContent = {
   ],
 };
 
-export const CREDENTIALS_STRIP = [
-  "Counseling Psychologist",
-  "PhD Researcher at Amity University",
-  "Founder, Psyber Hub",
-  "TEDx Speaker",
-  "Published Researcher",
+export const CREDENTIALS: CredentialItem[] = [
+  { title: "Counseling Psychologist" },
+  { title: "PhD Researcher", subtitle: "Amity University" },
+  { title: "Founder", subtitle: "Psyber Hub" },
+  { title: "TEDx Speaker" },
+  { title: "Published Researcher" },
 ];
 
 export const services: Service[] = [

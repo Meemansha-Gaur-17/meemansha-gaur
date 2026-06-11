@@ -65,3 +65,14 @@ body {
   border: 1px solid rgb(255 255 255 / 0.18);
   box-shadow: 0 8px 32px rgb(10 124 110 / 0.22);
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

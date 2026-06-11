@@ -20,5 +20,7 @@ export const nav: NavLink[] = [
   { label: "Research", href: "#publications" },
   { label: "Speaking", href: "#speaking" },
   { label: "Skills", href: "#skills" },
+  { label: "Offerings", href: "#offerings" },
+  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];

@@ -6,6 +6,8 @@ import Education from "./components/Education";
 import Publications from "./components/Publications";
 import Speaking from "./components/Speaking";
 import Skills from "./components/Skills";
+import Offerings from "./components/Offerings";
+import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 
 export default function Home() {
@@ -19,6 +21,8 @@ export default function Home() {
       <Publications />
       <Speaking />
       <Skills />
+      <Offerings />
+      <Testimonials />
       <Contact />
     </>
   );

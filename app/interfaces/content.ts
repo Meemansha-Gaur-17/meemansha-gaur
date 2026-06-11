@@ -105,3 +105,31 @@ export interface ExtracurricularEntry {
   category: string;
   detail: string;
 }
+
+export interface Testimonial {
+  name: string;
+  date: string;
+  text: string;
+}
+
+export type OfferingCategory = "session" | "course" | "resource";
+
+export interface Offering {
+  id: number;
+  title: string;
+  description: string;
+  category: OfferingCategory;
+  type: "Digital Product" | "Video meeting" | "Package";
+  duration?: number;
+  price: number;
+  originalPrice?: number;
+  image?: string;
+  href: string;
+}
+
+export interface OfferingSection {
+  id: OfferingCategory;
+  eyebrow: string;
+  heading: string;
+  description: string;
+}

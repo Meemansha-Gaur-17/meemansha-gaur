@@ -1,32 +1,38 @@
-import { CARD_THEMES, CREDENTIALS } from "./constants";
+import { CREDENTIALS } from "./constants";
 
 export default function CredentialsBento() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-16">
-      {CREDENTIALS.map((item, i) => {
-        const theme = CARD_THEMES[i % CARD_THEMES.length];
-
-        return (
+    <div className="mb-16 py-8 border-y border-gray-100">
+      {/* Desktop: single row, hairline vertical dividers */}
+      <div className="hidden lg:flex">
+        {CREDENTIALS.map((item, i) => (
           <div
             key={item.title}
-            className="rounded-2xl px-4 py-4 flex flex-col gap-2.5"
-            style={{ background: theme.bgGrad }}
+            className={`flex-1 ${i > 0 ? "pl-8 border-l border-gray-100" : "pr-8"}`}
           >
-            <div
-              className="w-6 h-0.5 rounded-full shrink-0"
-              style={{ backgroundColor: theme.rule }}
-            />
-            <p className={`font-body text-sm font-semibold leading-snug ${theme.title}`}>
+            <p className="font-body text-sm font-medium text-gray-900 leading-snug">
               {item.title}
             </p>
             {item.subtitle && (
-              <p className="font-body text-xs leading-snug" style={{ color: theme.desc }}>
+              <p className="font-body text-xs text-gray-400 mt-1 leading-snug">
                 {item.subtitle}
               </p>
             )}
           </div>
-        );
-      })}
+        ))}
+      </div>
+
+      {/* Mobile / tablet: compact vertical list */}
+      <div className="lg:hidden flex flex-col divide-y divide-gray-100">
+        {CREDENTIALS.map((item) => (
+          <div key={item.title} className="py-4 first:pt-0 last:pb-0">
+            <p className="font-body text-sm font-medium text-gray-900">{item.title}</p>
+            {item.subtitle && (
+              <p className="font-body text-xs text-gray-400 mt-0.5">{item.subtitle}</p>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

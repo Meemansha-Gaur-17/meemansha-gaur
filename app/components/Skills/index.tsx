@@ -14,7 +14,7 @@ const SKILL_LISTS = [skills.clinical, skills.assessment, skills.tools] as const;
 
 export default function Skills() {
   return (
-    <section className="py-28 bg-[#fafafa]">
+    <section id="skills" className="py-28 bg-[#fafafa]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">

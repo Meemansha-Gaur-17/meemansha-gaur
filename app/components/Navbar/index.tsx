@@ -21,7 +21,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between py-5">
+      <div className="max-w-7xl mx-auto px-6 h-[4.5rem] flex items-center justify-between">
         <a
           href="#"
           className="font-display text-2xl font-medium text-[#0a7c6e] tracking-wide"
@@ -65,7 +65,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-96" : "max-h-0"}`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-[32rem]" : "max-h-0"}`}
       >
         <div className="bg-white border-t border-gray-100 px-6 py-6 flex flex-col gap-5">
           {nav.map((link) => (

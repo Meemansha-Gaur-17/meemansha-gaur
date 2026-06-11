@@ -10,7 +10,7 @@ export default function Speaking() {
   const others = speaking.filter((s) => !s.featured);
 
   return (
-    <section className="py-28 bg-white">
+    <section id="speaking" className="py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">

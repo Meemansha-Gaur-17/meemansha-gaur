@@ -91,8 +91,8 @@ export default function Hero() {
                 />
               </div>
 
-              <div className="absolute -bottom-5 -left-6 md:-left-10 bg-white rounded-2xl px-5 py-4 shadow-xl flex items-center gap-3 border-l-4 border-l-[#ff6b35]">
-                <div className="w-10 h-10 rounded-full bg-[#ff6b35]/15 flex items-center justify-center flex-shrink-0 text-xl">
+              <div className="absolute -bottom-5 -left-6 md:-left-10 glass-card rounded-2xl px-5 py-4 flex items-center gap-3 border-l-4 border-l-[#ff6b35]">
+                <div className="w-10 h-10 rounded-full bg-[#ff6b35]/15 flex items-center justify-center shrink-0 text-xl">
                   {FLOATING_BADGE.emoji}
                 </div>
                 <div>
@@ -105,7 +105,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="absolute top-1/2 -right-2 md:-right-6 bg-[#0a7c6e] rounded-2xl px-4 py-3 shadow-lg">
+              <div className="absolute top-1/2 -right-2 md:-right-6 glass-teal rounded-2xl px-4 py-3">
                 <p className="font-body text-xs font-bold text-white/60 uppercase tracking-wider">
                   {STATUS_BADGE.label}
                 </p>

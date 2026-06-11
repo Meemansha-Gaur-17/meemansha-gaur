@@ -4,8 +4,6 @@ import type { FeaturedTalkStyle, PracticeHighlight } from "./interfaces";
 export const SECTION_HEADING = "Talks & Workshops";
 
 export const FEATURED_TALK_STYLE: FeaturedTalkStyle = {
-  backgroundImage: "/meemansha-tedx.jpg",
-  overlayColor: "#e05a27",
   watermarkText: "TED",
 };
 

@@ -5,7 +5,5 @@ export interface PracticeHighlight {
 }
 
 export interface FeaturedTalkStyle {
-  backgroundImage: string;
-  overlayColor: string;
   watermarkText: string;
 }

@@ -145,7 +145,7 @@ export default function Experience() {
 
           <div className="relative">
             <div
-              className="absolute hidden md:block top-2 bottom-0 w-0.5 rounded-full left-[12.5rem]"
+              className="absolute hidden md:block top-2 bottom-0 w-0.5 rounded-full left-50"
               style={{ background: TIMELINE_GRADIENT }}
             />
 
@@ -158,7 +158,7 @@ export default function Experience() {
                     className="grid grid-cols-1 md:grid-cols-[11.5rem_2rem_1fr] md:items-start gap-2 md:gap-x-4 group"
                   >
                     <div className="md:text-right md:pr-2 pt-0 md:pt-1.5">
-                      <time className="font-body text-xs text-gray-400 leading-snug block max-w-[11.5rem] md:ml-auto">
+                      <time className="font-body text-xs text-gray-400 leading-snug block max-w-46 md:ml-auto">
                         {exp.period}
                       </time>
                     </div>

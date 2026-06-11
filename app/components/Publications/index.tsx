@@ -29,7 +29,7 @@ export default function Publications() {
             return (
               <div
                 key={i}
-                className="group p-8 md:p-10 rounded-2xl bg-white border-l-4 hover:shadow-xl transition-all duration-300"
+                className="group p-8 md:p-10 rounded-2xl glass-card border-l-4 hover:shadow-xl transition-all duration-300"
                 style={{ borderLeftColor: color }}
               >
                 <div className="flex items-start gap-6 md:gap-10">

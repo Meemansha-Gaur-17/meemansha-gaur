@@ -23,20 +23,8 @@ export default function Speaking() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {featured && (
-            <div
-              className="lg:col-span-2 relative rounded-3xl p-10 md:p-14 flex flex-col justify-between min-h-[360px] overflow-hidden bg-[#ff6b35]"
-              style={{
-                backgroundImage: `url('${FEATURED_TALK_STYLE.backgroundImage}')`,
-                backgroundSize: "cover",
-                backgroundPosition: "center top",
-              }}
-            >
-              <div
-                className="absolute inset-0"
-                style={{ backgroundColor: `${FEATURED_TALK_STYLE.overlayColor}/82` }}
-              />
-
-              <span className="absolute -bottom-8 -right-4 font-display text-[180px] font-light text-white/5 leading-none select-none pointer-events-none z-10">
+            <div className="lg:col-span-2 relative rounded-3xl p-10 md:p-14 flex flex-col justify-between min-h-[360px] overflow-hidden bg-[#ff6b35]">
+              <span className="absolute -bottom-8 -right-4 font-display text-[180px] font-light text-white/5 leading-none select-none pointer-events-none">
                 {FEATURED_TALK_STYLE.watermarkText}
               </span>
 
@@ -99,7 +87,7 @@ export default function Speaking() {
             {others.map((s, i) => (
               <div
                 key={i}
-                className="rounded-2xl bg-[#fafafa] border border-gray-100 p-8 hover:border-[#0a7c6e]/20 hover:shadow-md transition-all duration-300"
+                className="rounded-2xl glass-panel p-8 hover:border-[#0a7c6e]/20 hover:shadow-md transition-all duration-300"
               >
                 <p className="font-body text-xs text-gray-400 uppercase tracking-widest mb-3">
                   {s.date}

@@ -54,7 +54,7 @@ export default function Skills() {
                 {extracurricular.map((item, i) => (
                   <div
                     key={i}
-                    className="p-6 bg-white rounded-2xl border-t-4"
+                    className="p-6 glass-card rounded-2xl border-t-4"
                     style={{ borderTopColor: EXTRACURRICULAR_COLORS[i] }}
                   >
                     <p className="font-body font-semibold text-sm text-gray-900 mb-2">
@@ -76,7 +76,7 @@ export default function Skills() {
             {volunteering.map((v, i) => (
               <div
                 key={i}
-                className="p-7 bg-white rounded-2xl border-l-4"
+                className="p-7 glass-card rounded-2xl border-l-4"
                 style={{ borderLeftColor: VOLUNTEER_COLORS[i] }}
               >
                 <p className="font-body font-semibold text-gray-900">{v.role}</p>

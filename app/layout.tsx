@@ -18,9 +18,9 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Meemansha Gaur | Clinical Psychologist & Researcher",
+  title: "Meemansha Gaur | Counseling Psychologist & Researcher",
   description:
-    "Portfolio of Meemansha Gaur — Clinical Psychologist, PhD Researcher at Amity University, TEDx Speaker, and Founder of Psyber Hub.",
+    "Portfolio of Meemansha Gaur — Counseling Psychologist, PhD Researcher at Amity University, TEDx Speaker, and Founder of Psyber Hub.",
 };
 
 export default function RootLayout({

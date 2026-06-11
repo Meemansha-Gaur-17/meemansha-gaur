@@ -1,34 +1,30 @@
-import { content } from "../text_content";
-
-const PUB_COLORS = ["#f59e0b", "#0a7c6e"];
+import { BACKGROUND_IMAGE, publications, PUB_COLORS, SECTION_HEADING } from "./constants";
 
 export default function Publications() {
   return (
     <section id="publications" className="py-28 relative overflow-hidden bg-[#fafafa]">
-      {/* Background image at reduced opacity */}
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/meemansha-background.png')",
+          backgroundImage: `url('${BACKGROUND_IMAGE.src}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.25,
+          opacity: BACKGROUND_IMAGE.opacity,
         }}
       />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* Header */}
         <div className="mb-16">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">
             Research
           </p>
           <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light text-gray-900">
-            Publications
+            {SECTION_HEADING}
           </h2>
         </div>
 
         <div className="flex flex-col gap-8">
-          {content.publications.map((pub, i) => {
+          {publications.map((pub, i) => {
             const color = PUB_COLORS[i % 2];
             return (
               <div
@@ -37,7 +33,6 @@ export default function Publications() {
                 style={{ borderLeftColor: color }}
               >
                 <div className="flex items-start gap-6 md:gap-10">
-                  {/* Large number */}
                   <span
                     className="font-display text-7xl md:text-8xl font-light leading-none shrink-0 select-none pt-1"
                     style={{ color, opacity: 0.5 }}
@@ -57,7 +52,15 @@ export default function Publications() {
                     </div>
 
                     <h3 className="font-body font-semibold text-gray-900 text-lg leading-snug mb-3">
-                      {pub.title}
+                      <a
+                        href={pub.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline underline-offset-2 transition-colors"
+                        style={{ color: "inherit" }}
+                      >
+                        {pub.title}
+                      </a>
                     </h3>
 
                     <p className="font-body text-sm text-gray-400 mb-5 italic">

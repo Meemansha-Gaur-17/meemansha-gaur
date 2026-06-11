@@ -1,23 +1,20 @@
-import { content } from "../text_content";
-
-const EDU_COLORS = ["#0a7c6e", "#f59e0b", "#ff6b35"];
+import { education, EDU_COLORS, SECTION_HEADING } from "./constants";
 
 export default function Education() {
   return (
     <section id="education" className="py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
         <div className="mb-16">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">
             Education
           </p>
           <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light text-gray-900">
-            Academic Background
+            {SECTION_HEADING}
           </h2>
         </div>
 
         <div className="flex flex-col gap-5">
-          {content.education.map((edu, i) => {
+          {education.map((edu, i) => {
             const color = EDU_COLORS[i];
             return (
               <div
@@ -61,7 +58,6 @@ export default function Education() {
                     )}
                   </div>
 
-                  {/* CGPA — coloured badge */}
                   <div
                     className="shrink-0 rounded-2xl px-7 py-5 text-center md:text-right min-w-[130px]"
                     style={{ backgroundColor: color }}

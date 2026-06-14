@@ -16,6 +16,9 @@ export default function TestimonialsMobile() {
     [count],
   );
 
+  const next = useCallback(() => goTo(active + 1), [active, goTo]);
+  const prev = useCallback(() => goTo(active - 1), [active, goTo]);
+
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActive((current) => (current + 1) % count);
@@ -26,10 +29,10 @@ export default function TestimonialsMobile() {
   const current = testimonials[active];
 
   return (
-    <section id="testimonials" className="py-16 section-white relative overflow-hidden">
+    <section id="testimonials" className="py-16 section-white relative overflow-x-hidden">
       <div className="absolute inset-0 dot-pattern opacity-40 pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-5">
+      <div className="relative max-w-7xl mx-auto px-6">
         <div className="mb-8">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-3">
             Testimonials
@@ -37,49 +40,73 @@ export default function TestimonialsMobile() {
           <h2 className="font-display text-3xl font-light text-gray-900">{SECTION_HEADING}</h2>
         </div>
 
-        <div className="rounded-2xl bg-[#0a7c6e] p-6 overflow-hidden mb-5">
-          <div key={active} className="animate-[fadeIn_0.5s_ease-out]">
-            <blockquote className="font-body text-white/90 text-sm leading-relaxed mb-5">
+        <div className="rounded-2xl bg-[#0a7c6e] p-6 overflow-hidden">
+          <div key={active} className="min-h-[200px] animate-[fadeIn_0.5s_ease-out]">
+            <blockquote className="font-body text-white/90 text-sm leading-relaxed mb-6">
               &ldquo;{current.text}&rdquo;
             </blockquote>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2">
               <p className="font-body font-semibold text-sm text-white">{current.name}</p>
               <span className="w-1 h-1 rounded-full bg-white/30" />
               <p className="font-body text-xs text-white/50">{current.date}</p>
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-2 mt-6">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                aria-label={`Go to testimonial ${i + 1}`}
-                onClick={() => goTo(i)}
-                className={`h-2 rounded-full transition-all duration-300 min-w-2 ${
-                  i === active ? "w-6 bg-white" : "w-2 bg-white/30"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
+          <div className="mt-6 pt-5 border-t border-white/15 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-2 flex-1 min-w-0">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Go to testimonial ${i + 1}`}
+                  aria-current={i === active ? "true" : undefined}
+                  onClick={() => goTo(i)}
+                  className={`h-2 rounded-full transition-all duration-300 shrink-0 ${
+                    i === active ? "w-6 bg-white" : "w-2 bg-white/30"
+                  }`}
+                />
+              ))}
+            </div>
 
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5 snap-x snap-mandatory scrollbar-hide">
-          {testimonials.map((item, i) => (
-            <button
-              key={item.name + item.date}
-              type="button"
-              onClick={() => goTo(i)}
-              className={`snap-start shrink-0 w-[85%] max-w-xs text-left rounded-xl bg-white p-4 border transition-all ${
-                active === i ? "border-[#0a7c6e]/30 shadow-sm" : "border-gray-100"
-              }`}
-            >
-              <p className="font-body text-xs text-gray-600 leading-relaxed line-clamp-3">
-                {item.text}
-              </p>
-              <p className="font-body text-xs font-semibold text-gray-900 mt-3">{item.name}</p>
-            </button>
-          ))}
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                type="button"
+                aria-label="Previous testimonial"
+                onClick={prev}
+                className="w-10 h-10 rounded-full border border-white/25 text-white active:bg-white/10 transition-colors flex items-center justify-center"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                aria-label="Next testimonial"
+                onClick={next}
+                className="w-10 h-10 rounded-full border border-white/25 text-white active:bg-white/10 transition-colors flex items-center justify-center"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <p className="font-body text-[10px] text-white/40 text-center mt-4">
+            {active + 1} of {count}
+          </p>
         </div>
       </div>
     </section>

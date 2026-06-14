@@ -1,13 +1,19 @@
 import Link from "next/link";
-import { BOOK_SESSION_CTA, nav } from "./constants";
+import { BOOK_SESSION_CTA, isActivePath, nav } from "./constants";
 
 interface NavbarMobileProps {
+  pathname: string;
   menuOpen: boolean;
   setMenuOpen: (open: boolean) => void;
 }
 
-export default function NavbarMobile({ menuOpen, setMenuOpen }: NavbarMobileProps) {
+export default function NavbarMobile({
+  pathname,
+  menuOpen,
+  setMenuOpen,
+}: NavbarMobileProps) {
   const close = () => setMenuOpen(false);
+  const bookActive = isActivePath(pathname, BOOK_SESSION_CTA.href);
 
   return (
     <>
@@ -51,21 +57,36 @@ export default function NavbarMobile({ menuOpen, setMenuOpen }: NavbarMobileProp
             : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="px-5 py-4 flex flex-col">
-          {nav.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={close}
-              className="font-body text-base text-gray-700 hover:text-[#0a7c6e] py-3.5 min-h-11 flex items-center border-b border-gray-50"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="px-5 py-4 flex flex-col overflow-y-auto max-h-[calc(100dvh-4rem)]">
+          <nav aria-label="Mobile navigation" className="flex flex-col">
+            {nav.map((link) => {
+              const active = isActivePath(pathname, link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={close}
+                  aria-current={active ? "page" : undefined}
+                  className={`font-body text-base py-3.5 min-h-11 flex items-center border-b border-gray-50 ${
+                    active
+                      ? "text-[#0a7c6e] font-semibold"
+                      : "text-gray-700 hover:text-[#0a7c6e]"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
           <Link
             href={BOOK_SESSION_CTA.href}
             onClick={close}
-            className="font-body text-base text-gray-700 hover:text-[#0a7c6e] py-3.5 min-h-11 flex items-center"
+            aria-current={bookActive ? "page" : undefined}
+            className={`mt-4 font-body text-sm font-semibold px-5 py-3.5 rounded-full min-h-11 flex items-center justify-center transition-colors ${
+              bookActive
+                ? "bg-[#085f56] text-white"
+                : "bg-[#0a7c6e] text-white active:bg-[#085f56]"
+            }`}
           >
             {BOOK_SESSION_CTA.label}
           </Link>

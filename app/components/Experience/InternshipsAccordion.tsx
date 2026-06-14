@@ -19,7 +19,7 @@ export default function InternshipsAccordion({
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
-        className="w-full flex items-center justify-between gap-4 text-left group"
+        className="w-full flex items-center justify-between gap-4 text-left group min-h-11 py-2"
       >
         <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-gray-400 group-hover:text-[#0a7c6e] transition-colors">
           {label}

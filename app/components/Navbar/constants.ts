@@ -10,4 +10,9 @@ export const BOOK_SESSION_CTA: NavbarCta = {
   href: "/book",
 };
 
+export function isActivePath(pathname: string, href: string): boolean {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export { nav };

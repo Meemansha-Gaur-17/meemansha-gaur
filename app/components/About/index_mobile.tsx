@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { meta } from "@/app/content/meta";
-import { about, ABOUT_IMAGE, CARD_THEMES, CREDENTIALS, services } from "./constants";
+import { about, ABOUT_IMAGE, CARD_THEMES, services } from "./constants";
+import CredentialsBento from "./CredentialsBento";
 
 export default function AboutMobile() {
   return (
@@ -53,16 +54,7 @@ export default function AboutMobile() {
           <span className="font-body text-sm text-gray-400">{meta.location}</span>
         </div>
 
-        <div className="flex flex-col divide-y divide-gray-100 mb-10">
-          {CREDENTIALS.map((item) => (
-            <div key={item.title} className="py-3.5">
-              <p className="font-body text-sm font-medium text-gray-900">{item.title}</p>
-              {item.subtitle && (
-                <p className="font-body text-xs text-gray-400 mt-0.5">{item.subtitle}</p>
-              )}
-            </div>
-          ))}
-        </div>
+        <CredentialsBento />
 
         <div className="mb-6">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-3">

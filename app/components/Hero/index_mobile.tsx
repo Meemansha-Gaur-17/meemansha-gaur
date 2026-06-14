@@ -5,7 +5,7 @@ import { hero, PROFILE_IMAGE, STAT_COLORS } from "./constants";
 
 export default function HeroMobile() {
   return (
-    <section className="relative section-alt dot-pattern pt-20 pb-12 overflow-hidden">
+    <section className="relative section-alt dot-pattern pt-24 pb-12 overflow-hidden">
       <div className="absolute top-16 right-0 w-64 h-64 rounded-full bg-[#0a7c6e]/10 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-5 w-full">

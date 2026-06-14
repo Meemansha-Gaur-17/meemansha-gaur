@@ -1,9 +1,9 @@
 import Image from "next/image";
-import type { Offering, OfferingCategory } from "./interfaces";
+import type { Offering, OfferingsView } from "./interfaces";
 import {
-  offeringSections,
-  offerings,
-  SECTION_HEADING,
+  configForView,
+  offeringsByCategory,
+  sectionsForView,
   TOPMATE_PROFILE,
 } from "./constants";
 
@@ -24,10 +24,6 @@ function actionLabel(offering: Offering): string {
 function sessionMeta(offering: Offering) {
   if (offering.duration) return `${offering.duration} min session`;
   return "Video session";
-}
-
-function offeringsByCategory(category: OfferingCategory) {
-  return offerings.filter((offering) => offering.category === category);
 }
 
 function ExternalIcon() {
@@ -149,48 +145,60 @@ function ProductCard({ offering }: { offering: Offering }) {
   );
 }
 
-export default function Offerings() {
+export default function OfferingsDesktop({ view }: { view: OfferingsView }) {
+  const { eyebrow, heading, description, sectionId } = configForView(view);
+  const sections = sectionsForView(view);
+
   return (
-    <section id="offerings" className="py-28 section-alt">
+    <section id={sectionId} className="py-28 section-alt pt-32">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-20 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-          <div>
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">
-              Offerings
-            </p>
-            <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light text-gray-900">
-              {SECTION_HEADING}
-            </h2>
+        <div className="mb-20">
+          <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">
+            {eyebrow}
+          </p>
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+            <div className="max-w-2xl">
+              <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light text-gray-900">
+                {heading}
+              </h1>
+              {description && (
+                <p className="font-body text-sm text-gray-500 leading-relaxed mt-4">
+                  {description}
+                </p>
+              )}
+            </div>
+            <a
+              href={TOPMATE_PROFILE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body text-sm font-semibold text-[#0a7c6e] hover:text-[#085f56] transition-colors inline-flex items-center gap-2 shrink-0 sm:mt-3"
+            >
+              View all on Topmate
+              <ExternalIcon />
+            </a>
           </div>
-          <a
-            href={TOPMATE_PROFILE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-body text-sm font-semibold text-[#0a7c6e] hover:text-[#085f56] transition-colors inline-flex items-center gap-2 shrink-0"
-          >
-            View all on Topmate
-            <ExternalIcon />
-          </a>
         </div>
 
         <div className="flex flex-col gap-20">
-          {offeringSections.map((section) => {
-            const items = offeringsByCategory(section.id);
+          {sections.map((section) => {
+            const items = offeringsByCategory(section.id, view);
             if (items.length === 0) return null;
 
             return (
               <div key={section.id}>
-                <div className="mb-10">
-                  <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-gray-400 mb-4">
-                    {section.eyebrow}
-                  </p>
-                  <h3 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] font-light text-gray-900 mb-3">
-                    {section.heading}
-                  </h3>
-                  <p className="font-body text-sm text-gray-500 max-w-2xl leading-relaxed">
-                    {section.description}
-                  </p>
-                </div>
+                {view !== "sessions" && (
+                  <div className="mb-10">
+                    <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-gray-400 mb-4">
+                      {section.eyebrow}
+                    </p>
+                    <h3 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] font-light text-gray-900 mb-3">
+                      {section.heading}
+                    </h3>
+                    <p className="font-body text-sm text-gray-500 max-w-2xl leading-relaxed">
+                      {section.description}
+                    </p>
+                  </div>
+                )}
 
                 {section.id === "session" ? (
                   <div className="flex flex-col gap-4">

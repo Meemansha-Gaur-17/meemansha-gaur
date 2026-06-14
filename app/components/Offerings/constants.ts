@@ -1,7 +1,43 @@
 import type { Offering, OfferingSection } from "@/app/interfaces/content";
+import type { OfferingCategory, OfferingsView } from "./interfaces";
 
-export const SECTION_HEADING = "Sessions & Resources";
+export const SESSIONS_HEADING = "Therapy & Guidance";
+export const RESOURCES_HEADING = "Courses & Resources";
 export const TOPMATE_PROFILE = "https://topmate.io/meemansha_gaur";
+
+export function sectionsForView(view: OfferingsView): OfferingSection[] {
+  if (view === "sessions") {
+    return offeringSections.filter((section) => section.id === "session");
+  }
+  return offeringSections.filter((section) => section.id !== "session");
+}
+
+export function configForView(view: OfferingsView) {
+  if (view === "sessions") {
+    return {
+      eyebrow: "One-on-One",
+      heading: "Book a Session",
+      description:
+        "Choose a session below and book instantly on Topmate. All sessions are one-on-one video calls.",
+      sectionId: "sessions",
+    };
+  }
+  return {
+    eyebrow: "Resources",
+    heading: RESOURCES_HEADING,
+    description:
+      "Digital courses, exam prep kits, and clinician toolkits — browse and purchase on Topmate.",
+    sectionId: "resources",
+  };
+}
+
+export function offeringsByCategory(category: OfferingCategory, view: OfferingsView) {
+  const items = offerings.filter((offering) => offering.category === category);
+  if (view === "resources") {
+    return [...items].sort((a, b) => b.price - a.price);
+  }
+  return items;
+}
 
 export const offeringSections: OfferingSection[] = [
   {

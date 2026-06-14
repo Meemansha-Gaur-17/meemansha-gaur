@@ -2,7 +2,7 @@ import { CREDENTIALS } from "./constants";
 
 export default function CredentialsBento() {
   return (
-    <div className="mb-16 py-8 border-y border-gray-100">
+      <div className="mb-16 py-6 lg:py-8 border-y border-gray-100">
       {/* Desktop: single row, hairline vertical dividers */}
       <div className="hidden lg:flex">
         {CREDENTIALS.map((item, i) => (

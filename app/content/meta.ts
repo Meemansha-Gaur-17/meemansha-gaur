@@ -17,4 +17,5 @@ export const meta: Meta = {
 export const nav: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
+  { label: "Resources", href: "/resources" },
 ];

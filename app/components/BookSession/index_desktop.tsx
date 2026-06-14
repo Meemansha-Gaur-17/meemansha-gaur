@@ -2,7 +2,12 @@
 
 import { useState, type FormEvent } from "react";
 import { meta } from "@/app/content/meta";
-import { BOOK_SESSION_COPY } from "./constants";
+import { BOOK_SESSION_COPY, SESSION_TYPE_OPTIONS } from "./constants";
+
+const inputClassName =
+  "font-body text-sm rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#0a7c6e] transition-colors";
+const labelClassName =
+  "font-body text-xs font-semibold uppercase tracking-wider text-gray-400";
 
 export default function BookSession() {
   const [submitted, setSubmitted] = useState(false);
@@ -13,27 +18,32 @@ export default function BookSession() {
     const data = new FormData(form);
     const name = String(data.get("name") ?? "");
     const email = String(data.get("email") ?? "");
-    const reason = String(data.get("reason") ?? "");
-    const timeSlot = String(data.get("timeSlot") ?? "");
+    const sessionType = String(data.get("sessionType") ?? "");
+    const message = String(data.get("message") ?? "");
+    const availability = String(data.get("availability") ?? "");
+
+    const sessionLabel =
+      SESSION_TYPE_OPTIONS.find((option) => option.value === sessionType)?.label ??
+      sessionType;
 
     const subject = encodeURIComponent(`Session request from ${name}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nReason: ${reason}\nPreferred time: ${timeSlot}`,
+      `Name: ${name}\nEmail: ${email}\nSession: ${sessionLabel}\nMessage: ${message}\nPreferred availability: ${availability}`,
     );
     window.location.href = `mailto:${meta.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
 
   return (
-    <section id="book" className="py-28 section-white pt-32">
+    <section id="book" className="py-28 section-white">
       <div className="max-w-3xl mx-auto px-6">
         <div className="mb-12 text-center">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">
             {BOOK_SESSION_COPY.eyebrow}
           </p>
-          <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light text-gray-900 mb-5">
+          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-light text-gray-900 mb-5">
             {BOOK_SESSION_COPY.heading}
-          </h1>
+          </h2>
           <p className="font-body text-gray-500 leading-relaxed max-w-lg mx-auto">
             {BOOK_SESSION_COPY.description}
           </p>
@@ -60,54 +70,67 @@ export default function BookSession() {
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <label className="flex flex-col gap-2">
-                <span className="font-body text-xs font-semibold uppercase tracking-wider text-gray-400">
-                  Full name
-                </span>
+                <span className={labelClassName}>Name</span>
                 <input
                   name="name"
                   type="text"
                   required
-                  className="font-body text-sm rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#0a7c6e] transition-colors"
-                  placeholder="Your name"
+                  autoComplete="name"
+                  className={inputClassName}
+                  placeholder="Your full name"
                 />
               </label>
               <label className="flex flex-col gap-2">
-                <span className="font-body text-xs font-semibold uppercase tracking-wider text-gray-400">
-                  Email
-                </span>
+                <span className={labelClassName}>Email address</span>
                 <input
                   name="email"
                   type="email"
                   required
-                  className="font-body text-sm rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#0a7c6e] transition-colors"
+                  autoComplete="email"
+                  className={inputClassName}
                   placeholder="you@email.com"
                 />
               </label>
             </div>
 
             <label className="flex flex-col gap-2">
-              <span className="font-body text-xs font-semibold uppercase tracking-wider text-gray-400">
-                Reason for reaching out
-              </span>
+              <span className={labelClassName}>Session you&apos;re interested in</span>
+              <select
+                name="sessionType"
+                required
+                defaultValue=""
+                className={`${inputClassName} bg-white`}
+              >
+                <option value="" disabled>
+                  Select a session type
+                </option>
+                {SESSION_TYPE_OPTIONS.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="flex flex-col gap-2">
+              <span className={labelClassName}>What would you like to discuss?</span>
               <textarea
-                name="reason"
+                name="message"
                 required
                 rows={4}
-                className="font-body text-sm rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#0a7c6e] transition-colors resize-none"
-                placeholder="Therapy, career guidance, speaking inquiry..."
+                className={`${inputClassName} resize-none`}
+                placeholder="Briefly share what brings you here — therapy, career guidance, or any questions before booking."
               />
             </label>
 
             <label className="flex flex-col gap-2">
-              <span className="font-body text-xs font-semibold uppercase tracking-wider text-gray-400">
-                Preferred time slot
-              </span>
+              <span className={labelClassName}>When works best for you?</span>
               <input
-                name="timeSlot"
+                name="availability"
                 type="text"
                 required
-                className="font-body text-sm rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#0a7c6e] transition-colors"
-                placeholder="e.g. Weekday evenings, Saturday morning"
+                className={inputClassName}
+                placeholder="e.g. Weekday evenings, Saturday mornings, IST timezone"
               />
             </label>
 
@@ -115,7 +138,7 @@ export default function BookSession() {
               type="submit"
               className="font-body font-semibold text-sm bg-[#0a7c6e] text-white px-8 py-4 rounded-full hover:bg-[#085f56] transition-all duration-300 hover:shadow-xl self-start"
             >
-              Send booking request
+              Send request
             </button>
           </form>
         )}

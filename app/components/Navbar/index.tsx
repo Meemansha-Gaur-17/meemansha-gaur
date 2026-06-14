@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { LOGO, SCROLL_THRESHOLD } from "./constants";
 import NavbarDesktop from "./index_desktop";
 import NavbarMobile from "./index_mobile";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -51,8 +53,12 @@ export default function Navbar() {
           {LOGO}
         </Link>
 
-        <NavbarDesktop />
-        <NavbarMobile menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <NavbarDesktop pathname={pathname} />
+        <NavbarMobile
+          pathname={pathname}
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+        />
       </div>
     </nav>
   );

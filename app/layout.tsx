@@ -30,7 +30,6 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${jakarta.variable}`}>
-      <head><meta name="google-site-verification" content="3vsnOg0Cb6CzWwGg6AltXXInG1CyiUCXMEDfoTNUavQ" /></head>
       <body>
         <JsonLd />
         {children}

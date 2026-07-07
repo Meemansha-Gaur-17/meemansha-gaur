@@ -158,9 +158,9 @@ export default function OfferingsDesktop({ view }: { view: OfferingsView }) {
           </p>
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
             <div className="max-w-2xl">
-              <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light text-gray-900">
+              <div className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light text-gray-900">
                 {heading}
-              </h1>
+              </div>
               {description && (
                 <p className="font-body text-sm text-gray-500 leading-relaxed mt-4">
                   {description}

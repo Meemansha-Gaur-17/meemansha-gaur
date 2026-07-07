@@ -25,9 +25,9 @@ export default function OfferingsMobile({ view }: { view: OfferingsView }) {
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-3">
             {eyebrow}
           </p>
-          <h1 className="font-display text-3xl font-light text-gray-900 mb-3">
+          <div className="font-display text-3xl font-light text-gray-900 mb-3">
             {heading}
-          </h1>
+          </div>
           {description && (
             <p className="font-body text-sm text-gray-500 leading-relaxed mb-4">
               {description}

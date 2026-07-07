@@ -26,13 +26,13 @@ export default function HeroMobile() {
 
           <div className="flex flex-col gap-4 w-full">
             <div className="leading-none">
-              <h1 className="font-display text-[clamp(2.75rem,12vw,3.5rem)] font-light text-gray-900 leading-[0.95]">
+              <div className="font-display text-[clamp(2.75rem,12vw,3.5rem)] font-light text-gray-900 leading-[0.95]">
                 <span className="block">{meta.firstName}</span>
                 <span className="block">
                   {meta.lastName}
                   <span className="text-[#0a7c6e]">.</span>
                 </span>
-              </h1>
+              </div>
             </div>
 
             <p className="font-body text-base text-gray-500 leading-relaxed px-2">

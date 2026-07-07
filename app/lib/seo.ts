@@ -64,7 +64,7 @@ export function getJsonLd() {
       email: meta.email,
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Rishikesh",
+        addressLocality: meta.location.split(",")[0]?.trim() ?? meta.location,
         addressCountry: "IN",
       },
       sameAs: [meta.linkedinHref, TOPMATE_PROFILE],

@@ -4,6 +4,7 @@ import Education from "../components/Education";
 import Publications from "../components/Publications";
 import Speaking from "../components/Speaking";
 import Skills from "../components/Skills";
+import { SECTION_HEADING } from "../components/Experience/constants";
 import { createPageMetadata } from "@/app/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -18,6 +19,7 @@ export default function WorkPage() {
     <>
       <Navbar />
       <main>
+        <h1 className="sr-only">{SECTION_HEADING}</h1>
         <Experience />
         <Education />
         <Publications />

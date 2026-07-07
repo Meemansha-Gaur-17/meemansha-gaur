@@ -22,9 +22,9 @@ export default function Experience() {
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-5">
             Experience
           </p>
-          <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light text-gray-900">
+          <div className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light text-gray-900">
             {SECTION_HEADING}
-          </h1>
+          </div>
         </div>
 
         <div className="mb-6">

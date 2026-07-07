@@ -13,13 +13,13 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-8">
             <div className="leading-none">
-              <h1 className="font-display text-[clamp(4rem,10vw,7.5rem)] font-light text-gray-900 leading-[0.9]">
+              <div className="font-display text-[clamp(4rem,10vw,7.5rem)] font-light text-gray-900 leading-[0.9]">
                 <span className="block">{meta.firstName}</span>
                 <span className="block">
                   {meta.lastName}
                   <span className="text-[#0a7c6e]">.</span>
                 </span>
-              </h1>
+              </div>
             </div>
 
             <p className="font-body text-lg text-gray-500 leading-relaxed max-w-md">

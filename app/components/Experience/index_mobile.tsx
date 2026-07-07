@@ -20,7 +20,7 @@ export default function ExperienceMobile() {
           <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-[#0a7c6e] mb-3">
             Experience
           </p>
-          <h1 className="font-display text-3xl font-light text-gray-900">{SECTION_HEADING}</h1>
+          <div className="font-display text-3xl font-light text-gray-900">{SECTION_HEADING}</div>
         </div>
 
         <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-gray-400 mb-4">

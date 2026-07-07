@@ -14,7 +14,7 @@ export default function InternshipsAccordion({
   const label = `Clinical Training (${internships.length} placements)`;
 
   return (
-    <div className="pt-12 border-t border-gray-200">
+    <div className="pt-12">
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}

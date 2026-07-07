@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import JsonLd from "@/app/components/JsonLd";
+import { createPageMetadata } from "@/app/lib/seo";
+import { getSiteUrl } from "@/app/lib/site";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -18,9 +21,8 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Meemansha Gaur | Counseling Psychologist & Researcher",
-  description:
-    "Portfolio of Meemansha Gaur — Counseling Psychologist, PhD Researcher at Amity University, TEDx Speaker, and Founder of Psyber Hub.",
+  metadataBase: new URL(getSiteUrl()),
+  ...createPageMetadata({ path: "/" }),
 };
 
 export default function RootLayout({
@@ -28,7 +30,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${jakarta.variable}`}>
-      <body>{children}</body>
+      <head><meta name="google-site-verification" content="llVJrrlxLoHrEu68b6II8V2r3J2AYjDSByIh3H6AUMo" /></head>
+      <body>
+        <JsonLd />
+        {children}
+      </body>
     </html>
   );
 }

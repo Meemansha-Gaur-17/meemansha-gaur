@@ -67,6 +67,8 @@ export default function Contact() {
           </p>
           <a
             href={meta.linkedinHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-body text-sm text-white/40 hover:text-white transition-colors flex items-center gap-1.5"
           >
             {meta.linkedinLabel}

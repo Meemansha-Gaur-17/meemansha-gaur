@@ -9,7 +9,7 @@ export const meta: Meta = {
     "I help people understand themselves — through therapy, research, and honest conversation.",
   email: "meemansha87@gmail.com",
   phone: "+91-8077574531",
-  location: "Rishikesh, India",
+  location: "Gurgaon, India",
   linkedinLabel: "LinkedIn",
   linkedinHref: "https://in.linkedin.com/in/meemanshagaur",
 };

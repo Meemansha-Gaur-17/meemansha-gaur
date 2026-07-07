@@ -36,6 +36,8 @@ export default function ContactMobile() {
           <p className="font-body text-white/40 text-xs">{meta.location}</p>
           <a
             href={meta.linkedinHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-body text-xs text-white/40 hover:text-white transition-colors"
           >
             {meta.linkedinLabel} →

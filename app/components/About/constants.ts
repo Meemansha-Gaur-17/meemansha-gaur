@@ -1,5 +1,13 @@
-import type { AboutContent, Service } from "@/app/interfaces/content";
+import type { AboutContent, Service, Stat } from "@/app/interfaces/content";
 import type { CardTheme, CredentialItem } from "./interfaces";
+
+export const HOME_STATS: Stat[] = [
+  { value: "3+", label: "Years in Practice" },
+  { value: "6", label: "Institutional Collaborations" },
+  { value: "50+", label: "Children Trained" },
+];
+
+export const STAT_COLORS = ["#0a7c6e", "#f59e0b", "#ff6b35"];
 
 export const ABOUT_IMAGE = {
   src: "/meemansha_image_2.jpg",

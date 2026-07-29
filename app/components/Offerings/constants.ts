@@ -102,7 +102,7 @@ export const offerings: Offering[] = [
     description: "Paper 1 + Paper 2 (Psychology) Combo",
     category: "course",
     type: "Package",
-    price: 849,
+    price: 1299,
     href: "https://topmate.io/meemansha_gaur/1518844",
   },
   {
@@ -113,7 +113,7 @@ export const offerings: Offering[] = [
     type: "Digital Product",
     price: 699,
     originalPrice: 1999,
-    image: "https://static.topmate.io/oSUP4DfuDrziLRVTFLn5J8.png",
+    image: "https://topmate.io/cdn-cgi/image/width=640,quality=90/https://static.topmate.io/profile_pic_346908_bab0cd29-aec3-4b60-9921-57cc6cd94551.png",
     href: "https://topmate.io/meemansha_gaur/1463425",
   },
   {

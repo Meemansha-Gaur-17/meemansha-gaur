@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -48,9 +49,17 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={() => setMenuOpen(false)}
-          className="font-display text-2xl font-medium text-[#0a7c6e] tracking-wide"
+          aria-label="Meemansha Gaur home"
+          className="relative shrink-0"
         >
-          {LOGO}
+          <Image
+            src={LOGO.src}
+            alt={LOGO.alt}
+            width={LOGO.width}
+            height={LOGO.height}
+            className="h-10 w-10 object-contain"
+            priority
+          />
         </Link>
 
         <NavbarDesktop pathname={pathname} />

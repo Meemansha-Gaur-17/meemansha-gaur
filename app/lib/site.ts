@@ -11,5 +11,6 @@ export function getSiteUrl(): string {
     return `https://${process.env.VERCEL_URL}`;
   }
 
-  return "http://localhost:3000";
+  // Stable production URL for local builds / structured data fallback
+  return "https://meemansha-gaur.vercel.app";
 }

@@ -7,7 +7,7 @@ export const SITE_NAME = meta.name;
 export const DEFAULT_TITLE = `${meta.name} | Counseling Psychologist & Researcher`;
 
 export const DEFAULT_DESCRIPTION =
-  "Counseling Psychologist & PhD Researcher. TEDx Speaker, Psyber Hub founder. Therapy, research & courses.";
+  "Meemansha Gaur is a counseling psychologist in Gurgaon offering online therapy for anxiety, relationships, and emotional wellbeing, with career guidance available.";
 
 const TOPMATE_PROFILE = "https://topmate.io/meemansha_gaur";
 
@@ -23,8 +23,13 @@ export function createPageMetadata({
   const pageTitle = title ? `${title} | ${meta.name}` : DEFAULT_TITLE;
 
   return {
+    applicationName: SITE_NAME,
     title: pageTitle,
     description,
+    icons: {
+      icon: [{ url: "/favicon.png", type: "image/png" }],
+      apple: [{ url: "/apple-icon.png", type: "image/png" }],
+    },
     alternates: {
       canonical: path,
     },
@@ -44,15 +49,21 @@ export function createPageMetadata({
 }
 
 export function getJsonLd() {
-  const siteUrl = getSiteUrl();
+  const siteUrl = getSiteUrl().replace(/\/$/, "");
 
   return [
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: SITE_NAME,
-      url: siteUrl,
+      alternateName: [SITE_NAME, "MG"],
+      url: `${siteUrl}/`,
       description: DEFAULT_DESCRIPTION,
+      publisher: {
+        "@type": "Person",
+        name: SITE_NAME,
+        url: `${siteUrl}/`,
+      },
     },
     {
       "@context": "https://schema.org",
@@ -60,8 +71,9 @@ export function getJsonLd() {
       name: meta.name,
       jobTitle: "Counseling Psychologist",
       description: meta.tagline,
-      url: siteUrl,
+      url: `${siteUrl}/`,
       email: meta.email,
+      image: `${siteUrl}/mg-logo.png`,
       address: {
         "@type": "PostalAddress",
         addressLocality: meta.location.split(",")[0]?.trim() ?? meta.location,

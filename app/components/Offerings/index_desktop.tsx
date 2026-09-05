@@ -94,13 +94,13 @@ function ProductCard({ offering }: { offering: Offering }) {
       rel="noopener noreferrer"
       className="group rounded-2xl glass-card overflow-hidden hover:shadow-xl hover:border-[#0a7c6e]/20 transition-all duration-300 flex flex-col"
     >
-      <div className="relative aspect-16/10 bg-[#0a7c6e]/5 overflow-hidden">
+      <div className="relative aspect-square bg-[#0a7c6e]/5 overflow-hidden">
         {offering.image ? (
           <Image
             src={offering.image}
             alt={offering.title}
             fill
-            className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+            className="object-contain group-hover:scale-[1.03] transition-transform duration-500"
             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
         ) : (

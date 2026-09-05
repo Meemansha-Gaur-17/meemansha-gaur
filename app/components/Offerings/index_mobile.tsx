@@ -116,13 +116,13 @@ export default function OfferingsMobile({ view }: { view: OfferingsView }) {
                         rel="noopener noreferrer"
                         className="block rounded-xl bg-white border border-gray-100 overflow-hidden active:bg-gray-50"
                       >
-                        <div className="relative aspect-[16/10] bg-[#0a7c6e]/5">
+                        <div className="relative aspect-square bg-[#0a7c6e]/5">
                           {offering.image ? (
                             <Image
                               src={offering.image}
                               alt={offering.title}
                               fill
-                              className="object-cover"
+                              className="object-contain"
                               sizes="(max-width: 1024px) 100vw, 50vw"
                             />
                           ) : (

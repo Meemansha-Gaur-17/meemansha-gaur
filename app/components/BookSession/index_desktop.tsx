@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
 import { meta } from "@/app/content/meta";
 import { BOOK_SESSION_COPY, SESSION_TYPE_OPTIONS } from "./constants";
+import { useBookSessionSubmit } from "./useBookSessionSubmit";
 
 const inputClassName =
   "font-body text-sm rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#0a7c6e] transition-colors";
@@ -10,29 +10,9 @@ const labelClassName =
   "font-body text-xs font-semibold uppercase tracking-wider text-gray-400";
 
 export default function BookSession() {
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const sessionType = String(data.get("sessionType") ?? "");
-    const message = String(data.get("message") ?? "");
-    const availability = String(data.get("availability") ?? "");
-
-    const sessionLabel =
-      SESSION_TYPE_OPTIONS.find((option) => option.value === sessionType)?.label ??
-      sessionType;
-
-    const subject = encodeURIComponent(`Session request from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nSession: ${sessionLabel}\nMessage: ${message}\nPreferred availability: ${availability}`,
-    );
-    window.location.href = `mailto:${meta.email}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-  }
+  const { status, error, handleSubmit } = useBookSessionSubmit();
+  const submitted = status === "success";
+  const loading = status === "loading";
 
   return (
     <section id="book" className="py-28 section-white">
@@ -52,8 +32,8 @@ export default function BookSession() {
         {submitted ? (
           <div className="rounded-3xl glass-card p-10 text-center">
             <p className="font-body text-gray-700 leading-relaxed">
-              Your email client should open shortly. If it doesn&apos;t, reach out
-              directly at{" "}
+              Thanks — your request was sent. I&apos;ll reply within 1–2 business
+              days. If you need anything sooner, reach out at{" "}
               <a
                 href={`mailto:${meta.email}`}
                 className="text-[#0a7c6e] font-semibold hover:underline"
@@ -134,11 +114,18 @@ export default function BookSession() {
               />
             </label>
 
+            {error && (
+              <p className="font-body text-sm text-red-600" role="alert">
+                {error}
+              </p>
+            )}
+
             <button
               type="submit"
-              className="font-body font-semibold text-sm bg-[#0a7c6e] text-white px-8 py-4 rounded-full hover:bg-[#085f56] transition-all duration-300 hover:shadow-xl self-start"
+              disabled={loading}
+              className="font-body font-semibold text-sm bg-[#0a7c6e] text-white px-8 py-4 rounded-full hover:bg-[#085f56] transition-all duration-300 hover:shadow-xl self-start disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Send request
+              {loading ? "Sending…" : "Send request"}
             </button>
           </form>
         )}

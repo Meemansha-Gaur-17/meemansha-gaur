@@ -63,6 +63,7 @@ export const offeringSections: OfferingSection[] = [
   },
 ];
 
+/** Synced from https://topmate.io/meemansha_gaur */
 export const offerings: Offering[] = [
   {
     id: 1807706,
@@ -80,14 +81,14 @@ export const offerings: Offering[] = [
     description: "Session to get a roadmap every psych student wish to get",
     category: "session",
     type: "Video meeting",
-    duration: 45,
-    price: 799,
-    originalPrice: 999,
+    duration: 60,
+    price: 999,
+    originalPrice: 1500,
     href: "https://topmate.io/meemansha_gaur/1413202",
   },
   {
     id: 1308468,
-    title: "Therapy Session for 18+",
+    title: "Individual Therapy Session",
     description: "Individual Session to navigate life in fun way",
     category: "session",
     type: "Video meeting",
@@ -102,7 +103,9 @@ export const offerings: Offering[] = [
     description: "Paper 1 + Paper 2 (Psychology) Combo",
     category: "course",
     type: "Package",
-    price: 849,
+    price: 1299,
+    originalPrice: 1798,
+    image: "/offerings/ugc-net-psychology-powerpack.png",
     href: "https://topmate.io/meemansha_gaur/1518844",
   },
   {
@@ -111,9 +114,9 @@ export const offerings: Offering[] = [
     description: "Ace UGC NET Psychology with notes, PYQs, WhatsApp support!",
     category: "course",
     type: "Digital Product",
-    price: 699,
+    price: 999,
     originalPrice: 1999,
-    image: "https://static.topmate.io/oSUP4DfuDrziLRVTFLn5J8.png",
+    image: "/offerings/psychology-net-cracker.png",
     href: "https://topmate.io/meemansha_gaur/1463425",
   },
   {
@@ -122,9 +125,9 @@ export const offerings: Offering[] = [
     description: "UGC NET Paper 1 kit with notes, eBook, PYQs, mind maps, etc.",
     category: "course",
     type: "Digital Product",
-    price: 599,
+    price: 799,
     originalPrice: 1499,
-    image: "https://static.topmate.io/2GZgnS1q6GQJuy1654roHu.png",
+    image: "/offerings/ugc-net-paper1-masterprep-kit.png",
     href: "https://topmate.io/meemansha_gaur/1518826",
   },
   {
@@ -133,9 +136,9 @@ export const offerings: Offering[] = [
     description: "100% free psychology courses—save time & learn easily!",
     category: "course",
     type: "Digital Product",
-    price: 30,
+    price: 50,
     originalPrice: 99,
-    image: "https://static.topmate.io/va3FTeo5Jx81jsqzZGvTyX.png",
+    image: "/offerings/free-psychology-courses.png",
     href: "https://topmate.io/meemansha_gaur/1464172",
   },
   {
@@ -144,9 +147,9 @@ export const offerings: Offering[] = [
     description: "Crack CUET PG and other entrances in Psychology!",
     category: "course",
     type: "Digital Product",
-    price: 299,
+    price: 349,
     originalPrice: 499,
-    image: "https://static.topmate.io/1zF6S3p54saXphwctESUNo.jpg",
+    image: "/offerings/psychology-entrances-revision-kit.png",
     href: "https://topmate.io/meemansha_gaur/1466417",
   },
   {
@@ -157,17 +160,17 @@ export const offerings: Offering[] = [
     type: "Digital Product",
     price: 0,
     originalPrice: 199,
-    image: "https://static.topmate.io/8iQKwgyjGXhXYiyeM5WSk7.png",
+    image: "/offerings/research-toolkit-v2.png",
     href: "https://topmate.io/meemansha_gaur/1821422",
   },
   {
     id: 1983045,
     title: "Therapy notes template",
-    description: "Structured templates for clinical note-taking.",
+    description: "Download the sheet",
     category: "resource",
     type: "Digital Product",
     price: 0,
-    image: "https://static.topmate.io/d2VquRTc7TchVngVmzxTqU.jpg",
+    image: "/offerings/therapy-notes-template.png",
     href: "https://topmate.io/meemansha_gaur/1983045",
   },
   {
@@ -178,7 +181,7 @@ export const offerings: Offering[] = [
     type: "Digital Product",
     price: 0,
     originalPrice: 99,
-    image: "https://static.topmate.io/rejcPcJvX6Y39MoeRNqqit.jpg",
+    image: "/offerings/safespace-toolkit.png",
     href: "https://topmate.io/meemansha_gaur/1481821",
   },
   {
@@ -188,8 +191,8 @@ export const offerings: Offering[] = [
     category: "resource",
     type: "Digital Product",
     price: 0,
-    originalPrice: 99,
-    image: "https://static.topmate.io/hJrKPQ1w3PgijdeHHPMFLC.jpeg",
+    originalPrice: 49,
+    image: "/offerings/psychology-e-library.png",
     href: "https://topmate.io/meemansha_gaur/1707150",
   },
   {
@@ -198,9 +201,9 @@ export const offerings: Offering[] = [
     description: "NeuroDivergent Resource Hub: Tools for Learning & Growth",
     category: "resource",
     type: "Digital Product",
-    price: 119,
+    price: 199,
     originalPrice: 299,
-    image: "https://static.topmate.io/dfL4rheja6LvSSxBaxBiEw.png",
+    image: "/offerings/neurodivergent-resource-hub.png",
     href: "https://topmate.io/meemansha_gaur/1464470",
   },
   {
@@ -211,7 +214,7 @@ export const offerings: Offering[] = [
     type: "Digital Product",
     price: 99,
     originalPrice: 199,
-    image: "https://static.topmate.io/jEMrXGKyFzKgqzhXyiEq7r.png",
+    image: "/offerings/pro-bono-therapy-starter-kit.png",
     href: "https://topmate.io/meemansha_gaur/1413184",
   },
 ];

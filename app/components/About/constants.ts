@@ -10,10 +10,10 @@ export const HOME_STATS: Stat[] = [
 export const STAT_COLORS = ["#0a7c6e", "#f59e0b", "#ff6b35"];
 
 export const ABOUT_IMAGE = {
-  src: "/meemansha_image_2.jpg",
+  src: "/meemansha-gaur-portrait.jpg",
   alt: "Meemansha Gaur",
-  width: 380,
-  height: 440,
+  width: 576,
+  height: 1024,
 } as const;
 
 export const CARD_THEMES: CardTheme[] = [
